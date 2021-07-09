@@ -38,6 +38,7 @@ public class HotelService {
 		if(hotelExists(hotel.getEmail(),hotel.getTelephoneNumber())) {
 			throw new HotelAlreadyExistsException(" Hotel with Telephone "+hotel.getTelephoneNumber()+ " or Email " +hotel.getEmail()+ " already exists");
 		}
+		hotel.setStatus(false);
 		return hotelRepo.save(hotel);
 	}
 	
@@ -74,6 +75,13 @@ public class HotelService {
 		if(Objects.nonNull(oldHotel)) {
 			hotel.setHotelId(hotelId);
 		}
+		return hotelRepo.save(hotel);
+	}
+	
+	public HotelEntity approveHotel(Long hotelId) {
+		HotelEntity hotel = findHotel(hotelId);
+		hotel.setStatus(true);
+		hotel.setHotelId(hotelId);
 		return hotelRepo.save(hotel);
 	}	
 }
