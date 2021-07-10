@@ -6,6 +6,7 @@ import java.util.Objects;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -53,9 +54,9 @@ public class HotelController {
 	}
 	
 	@PutMapping("{id}")
-	public HotelEntity updateHotel(@PathVariable("id") Long hotelId, @RequestBody HotelEntity hotel) {
+	public ResponseEntity<HotelEntity> updateHotel(@PathVariable("id") Long hotelId, @RequestBody HotelEntity hotel) {
 		logger.info("inside updateHotel of HotelController");
-		return hotelService.updateHotel(hotel, hotelId);
+		return ResponseEntity.ok(this.hotelService.updateHotel(hotel, hotelId));
 	}
 	
 	@PostMapping("/approve/{id}")
