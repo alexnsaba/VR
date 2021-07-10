@@ -33,4 +33,9 @@ public class ExceptionController {
 	public ResponseEntity<String> handleAttachmentNotFoundException(AttachmentNotFoundException ex){
 		return new ResponseEntity<String>(ex.getMessage(),HttpStatus.NOT_FOUND);
 	}
+	
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<String> handleUnknownException(Exception ex){
+		return new ResponseEntity<String>(ex.getMessage(),HttpStatus.NOT_FOUND);
+	}
 }
