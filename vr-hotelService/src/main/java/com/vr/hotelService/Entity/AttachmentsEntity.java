@@ -1,5 +1,6 @@
 package com.vr.hotelService.Entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,8 +18,8 @@ public class AttachmentsEntity {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long attachmentId;
 	
+	@Column(name="attachment_name")
 	private String name;
-	private String description;
 	
 	@ManyToOne(targetEntity=HotelEntity.class)
 	@JoinColumn(name="hotel_id", nullable=false)
@@ -39,15 +40,7 @@ public class AttachmentsEntity {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
+	}	
 
 	public HotelEntity getHotel() {
 		return hotel;
@@ -57,9 +50,8 @@ public class AttachmentsEntity {
 		this.hotel = hotel;
 	}
 
-	public AttachmentsEntity(String name, String description, HotelEntity hotel) {		
+	public AttachmentsEntity(String name, HotelEntity hotel) {		
 		this.name = name;
-		this.description = description;
 		this.hotel = hotel;
 	}
 
