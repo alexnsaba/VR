@@ -35,7 +35,7 @@ public class AttachmentsService {
 	@Autowired
 	private HotelService hotelService;
 	
-	private final String uploadDir ="./uploads";
+	private final String uploadDir ="./uploads/";
 	
 	public List<AttachmentsEntity> findAllAttachments(){
 		return attachmentsRepo.findAll();

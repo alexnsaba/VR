@@ -50,7 +50,7 @@ public class AttachmentsController {
 	}
 	
 	@GetMapping("/download")
-    public void download(@RequestParam("fileName") String fileName,
+    public void download(@RequestParam("file") String fileName,
                          HttpServletResponse resp, HttpServletRequest req) throws Exception{
 		         attachmentsService.downloadAttachment(req, resp, fileName);
     }	

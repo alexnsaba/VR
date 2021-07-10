@@ -16,8 +16,17 @@ public class HotelEntity {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long hotelId;
 	
+	@Column(nullable = false)
+	private String hotelName;
+	
 	@Column(nullable=false)
 	private String location;
+	
+	@Column(nullable=false)
+	private String longitude;
+	
+	@Column(nullable=false)
+	private String latitude;
 	
 	@Column(nullable=false)
 	private BigDecimal price;
@@ -47,10 +56,28 @@ public class HotelEntity {
 
 	public String getLocation() {
 		return location;
-	}
+	}	
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+	
+	
+
+	public String getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+
+	public String getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
 	}
 
 	public BigDecimal getPrice() {
@@ -99,11 +126,24 @@ public class HotelEntity {
 
 	public void setStatus(boolean status) {
 		this.status = status;
+	}	
+
+	public String getHotelName() {
+		return hotelName;
 	}
 
-	public HotelEntity(String location, BigDecimal price, String telephoneNumber, String email, String website,
-			String managerName, boolean status) {
+	public void setHotelName(String hotelName) {
+		this.hotelName = hotelName;
+	}
+
+	
+
+	public HotelEntity(String hotelName, String location, String longitude, String latitude, BigDecimal price,
+			String telephoneNumber, String email, String website, String managerName, boolean status) {
+		this.hotelName = hotelName;
 		this.location = location;
+		this.longitude = longitude;
+		this.latitude = latitude;
 		this.price = price;
 		this.telephoneNumber = telephoneNumber;
 		this.email = email;
