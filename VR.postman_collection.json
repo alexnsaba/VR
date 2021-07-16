@@ -403,6 +403,137 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "tourist-service",
+			"item": [
+				{
+					"name": "Get all tourists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9001/api/v1/tourists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"api",
+								"v1",
+								"tourists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get tourist by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9001/api/v1/tourists/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"api",
+								"v1",
+								"tourists",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post a tourist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Kwitonda\",\r\n    \"lastName\":\"John\",\r\n    \"country\":\"Kenya\",\r\n    \"email\":\"alexnewzniyo@gmail.com\",\r\n    \"telephone\":\"0787946565\",\r\n    \"updatedBy\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/api/v1/tourists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"api",
+								"v1",
+								"tourists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a tourist",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9001/api/v1/tourists/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"api",
+								"v1",
+								"tourists",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a tourist",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Niyo\",\r\n    \"lastName\":\"Nsaba\",\r\n    \"country\":\"Kenya\",\r\n    \"email\":\"alexnewzniyo@gmail.com\",\r\n    \"telephone\":\"0787946565\",\r\n    \"updatedBy\":\"Kwitegetse\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/api/v1/tourists/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"api",
+								"v1",
+								"tourists",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
